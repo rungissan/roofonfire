@@ -73,7 +73,7 @@ exports.sendAlarmNotification = functions.database
     const alarm = event.data.val();
     const mechanicId = alarm.lift.mechanicid;
     const superviserId = alarm.lift.superviserid;
-
+    const realmechanicId = alarm.mechanicid;
     console.log(alarm);
 
     const text =
@@ -100,7 +100,7 @@ exports.sendAlarmNotification = functions.database
         line2: ''
       }
     };
-    let topic = mechanicId;
+    let topic = realmechanicId;
     // Send a message to devices subscribed to the provided topic.
     admin
       .messaging()
