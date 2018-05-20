@@ -52,8 +52,10 @@ exports.adminUserCreation = functions.database
     return admin
       .auth()
       .updateUser(userUID, userObject)
-      .then(userRecord =>  console.log('Successfully updated user', userRecord.toJSON()))
-      .catch((error) => {
+      .then(userRecord =>
+        console.log('Successfully updated user', userRecord.toJSON())
+      )
+      .catch(error => {
         console.log('Error updating user:', error);
       });
   });
@@ -64,7 +66,7 @@ exports.adminUserCreation = functions.database
  *
  *
  */
-exports.sendServiceNotification = functions.database
+exports.sendAlarmNotification = functions.database
   .ref('/alarms/{alarmId}')
   .onCreate(event => {
     const alarmKey = event.params.alarmId;
@@ -104,7 +106,7 @@ exports.sendServiceNotification = functions.database
       .messaging()
       .sendToTopic(topic, payload)
       .then(response => console.log('Successfully sent message:', response))
-      .catch((error) => {
+      .catch(error => {
         console.log('Error sending message:', error);
       });
 

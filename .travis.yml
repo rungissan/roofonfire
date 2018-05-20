@@ -6,4 +6,4 @@ script:
 install:
 - npm install -g firebase-tools
 after_success:
-- firabase deploy -project phonecard-d105b   - token 1/8T2K2JeGOpWwQPz_OR3_MpqBqbw0hn5VQbw5qf8dzFI
+- firabase deploy -project phonecard-d105b   - token 1/RozA1wTCtEe7FEVMKPPaYddJBqZ54ki4PhIV3oayPzrxgIX37fCAOvocEN8jgyiU
